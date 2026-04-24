@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login – QuizAI Next-Gen Engine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-body">
+  <!-- Dynamic Background -->
+  <div class="stars" id="stars"></div>
+
+  <div class="login-container">
+    <div class="login-brand">
+      <div class="brand-icon pulse">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <h1 class="brand-name">Quiz<span class="brand-accent">AI</span></h1>
+      <p class="brand-tagline">Master any topic. Track your progress. Climb the ranks.</p>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginFormContainer" class="auth-card">
+      <h2>Welcome Back</h2>
+      <p class="auth-subtitle">Log in to track your XP and streak.</p>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" placeholder="you@example.com" required>
+        </div>
+        <div class="input-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary auth-submit">
+          Log In
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+      <div class="auth-switch">
+        Don't have an account? <a href="#" onclick="toggleAuth('register')">Sign Up</a>
+      </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerFormContainer" class="auth-card hidden">
+      <h2>Create Account</h2>
+      <p class="auth-subtitle">Join the intelligent learning platform.</p>
+      <form id="registerForm">
+        <div class="input-group">
+          <label for="regUsername">Username (Public)</label>
+          <input type="text" id="regUsername" placeholder="QuizMaster99" required minlength="3">
+        </div>
+        <div class="input-group">
+          <label for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" placeholder="you@example.com" required>
+        </div>
+        <div class="input-group">
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" placeholder="Minimum 6 characters" required minlength="6">
+        </div>
+        <button type="submit" class="btn btn-primary auth-submit">
+          Create Account
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+      <div class="auth-switch">
+        Already have an account? <a href="#" onclick="toggleAuth('login')">Log In</a>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden"><span id="toastMessage"></span></div>
+
+  <script src="login.js"></script>
+</body>
+</html>
